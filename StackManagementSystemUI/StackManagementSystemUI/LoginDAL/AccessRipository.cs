@@ -16,7 +16,7 @@ namespace StackManagementSystemUI.LoginDAL
 
             bool login = false;
 
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=USER;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT UserName,Password FROM Logins WHERE UserName='" + accessObj.UserName +
                            "' AND Password='" + accessObj.Password + "'";
 

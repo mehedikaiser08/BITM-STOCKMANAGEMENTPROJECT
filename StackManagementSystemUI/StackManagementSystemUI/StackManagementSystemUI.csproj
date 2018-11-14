@@ -88,12 +88,23 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockInBLL\StockInManager.cs" />
+    <Compile Include="StockInBLL\StockInSelectedItemManager.cs" />
+    <Compile Include="StockInBLL\StockInCategoryManager.cs" />
+    <Compile Include="StockInBLL\StockInCompanyManager.cs" />
+    <Compile Include="StockInBLL\StockInItemManager.cs" />
+    <Compile Include="StockInDAL\StockInCategoryRepository.cs" />
+    <Compile Include="StockInDAL\StockInCompanyRepository.cs" />
+    <Compile Include="StockInDAL\StockInItemRepository.cs" />
+    <Compile Include="StockInDAL\StockInRepository.cs" />
+    <Compile Include="StockInDAL\StockInSelectedItemRepository.cs" />
     <Compile Include="StockInForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StockInForm.Designer.cs">
       <DependentUpon>StockInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockInModels\StockIn.cs" />
     <Compile Include="StockOutForm.cs">
       <SubType>Form</SubType>
     </Compile>

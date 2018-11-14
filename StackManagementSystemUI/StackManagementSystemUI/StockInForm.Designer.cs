@@ -51,6 +51,7 @@
             this.saveButton.TabIndex = 17;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // availableQuantityStockInTextBox
             // 
@@ -73,6 +74,7 @@
             this.companyStockInComboBox.Name = "companyStockInComboBox";
             this.companyStockInComboBox.Size = new System.Drawing.Size(193, 21);
             this.companyStockInComboBox.TabIndex = 14;
+            this.companyStockInComboBox.SelectedIndexChanged += new System.EventHandler(this.companyStockInComboBox_SelectedIndexChanged);
             // 
             // categoryStockInComboBox
             // 
@@ -81,6 +83,7 @@
             this.categoryStockInComboBox.Name = "categoryStockInComboBox";
             this.categoryStockInComboBox.Size = new System.Drawing.Size(193, 21);
             this.categoryStockInComboBox.TabIndex = 13;
+            this.categoryStockInComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryStockInComboBox_SelectedIndexChanged);
             // 
             // quantityTextBox
             // 
@@ -98,7 +101,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Reorder Lavel";
+            this.label3.Text = "Reorder Level";
             // 
             // label2
             // 
@@ -134,6 +137,7 @@
             this.itemStockInComboBox.Name = "itemStockInComboBox";
             this.itemStockInComboBox.Size = new System.Drawing.Size(193, 21);
             this.itemStockInComboBox.TabIndex = 19;
+            this.itemStockInComboBox.SelectedIndexChanged += new System.EventHandler(this.itemStockInComboBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -171,7 +175,7 @@
             this.Controls.Add(this.label1);
             this.Name = "StockInForm";
             this.Text = "StockInForm";
-            
+            this.Load += new System.EventHandler(this.StockInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
