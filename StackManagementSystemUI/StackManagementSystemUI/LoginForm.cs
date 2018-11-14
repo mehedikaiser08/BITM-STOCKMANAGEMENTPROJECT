@@ -23,6 +23,7 @@ namespace StackManagementSystemUI
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+
             Access accessObj = new Access();
             accessObj.UserName = userNameTextBox.Text;
             accessObj.Password = passTextBox.Text;
@@ -36,6 +37,9 @@ namespace StackManagementSystemUI
             bool login = accMangObj.AccessInfo(accessObj);
             if (login == true)
             {
+                //To active account creationg part
+                groupBox1.Enabled = true;
+
                 userNameTextBox.Text = "";
                 passTextBox.Text = "";
                HomePage homePage=new HomePage();
@@ -45,16 +49,11 @@ namespace StackManagementSystemUI
             {
                 userNameTextBox.Text = "";
                 passTextBox.Text = "";
-                MessageBox.Show("User name and password not found !\n Create account first.");
+                MessageBox.Show("User name and password not found !");
                 return;
             }
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
-        {
-            HomePage homePageForm=new HomePage();
-            homePageForm.Show();
-        }
 
         private void createButton_Click(object sender, EventArgs e)
         {
@@ -92,5 +91,13 @@ namespace StackManagementSystemUI
             }
 
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            //To inactive account creationg part
+            groupBox1.Enabled = false;
+        }
+
+       
     }
 }

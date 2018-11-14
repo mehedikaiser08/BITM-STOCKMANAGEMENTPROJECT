@@ -44,11 +44,8 @@
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.logoutButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -201,41 +198,20 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "User Name";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.logoutButton);
-            this.groupBox3.Location = new System.Drawing.Point(173, 343);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(135, 55);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.BackColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(44, 19);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(75, 23);
-            this.logoutButton.TabIndex = 0;
-            this.logoutButton.Text = "Logout";
-            this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 410);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(320, 360);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,7 +234,5 @@
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button logoutButton;
     }
 }

@@ -12,7 +12,7 @@ namespace StackManagementSystemUI.StockInDAL
     {
        public DataTable GetCategoryNames(string selectedCompany)
        {
-           string connectionString = @"Server=USER;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+           string connectionString = @"Server=.\SQLExpress;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
            string query = @"SELECT DISTINCT Category FROM Items WHERE Company='" + selectedCompany + "'";
            SqlConnection conn = new SqlConnection(connectionString);
            SqlCommand comand = new SqlCommand(query, conn);

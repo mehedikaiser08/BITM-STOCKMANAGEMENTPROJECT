@@ -12,7 +12,7 @@ namespace StackManagementSystemUI.StockInDAL
     {
         public DataTable GetReorderLevel_and_AvailableQuantity(string seletedItem)
         {
-            string connectionString = @"Server=USER;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLExpress;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT ReorderLabel,AvailableQuantity FROM Items WHERE Item='" + seletedItem + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comand = new SqlCommand(query, conn);

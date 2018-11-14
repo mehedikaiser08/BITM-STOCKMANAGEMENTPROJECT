@@ -13,7 +13,7 @@ namespace StackManagementSystemUI.StockInDAL
        public string StockInQuantity(StockIn stockInObj)
        {
            string stockInInfo = "";
-           string connectionString = @"Server=USER;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+           string connectionString = @"Server=.\SQLExpress;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
            string query = @"UPDATE Items SET AvailableQuantity=" + (stockInObj.previousQuantity + stockInObj.stockInQuantity) + "WHERE Item='" + stockInObj.ItemName + "'";
            SqlConnection conn = new SqlConnection(connectionString);
            SqlCommand comand = new SqlCommand(query, conn);

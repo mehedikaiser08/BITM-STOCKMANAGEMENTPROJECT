@@ -12,7 +12,7 @@ namespace StackManagementSystemUI.StockInDAL
     {
         public DataTable GetItems(string selectedCategory)
         {
-            string connectionString = @"Server=USER;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLExpress;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT Item FROM Items WHERE Category='" + selectedCategory + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comand = new SqlCommand(query, conn);

@@ -12,7 +12,7 @@ namespace StackManagementSystemUI.StockInDAL
     {
            public DataTable GetCompanyNames()
            {
-               string connectionString = @"Server=USER;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+               string connectionString = @"Server=.\SQLExpress;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
                string query = @"SELECT Name FROM Companies";
                SqlConnection conn = new SqlConnection(connectionString);
                SqlCommand comdand = new SqlCommand(query, conn);
