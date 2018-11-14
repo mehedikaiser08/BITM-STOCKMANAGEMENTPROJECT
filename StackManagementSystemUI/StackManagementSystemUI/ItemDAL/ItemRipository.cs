@@ -12,8 +12,8 @@ namespace StackManagementSystemUI.ItemDAL
     {
         public string SaveItemInfo(Item itemObj)
         {
-            //string itemInfo = "";
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT Item FROM Items WHERE Item='" + itemObj.ItemName + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);

@@ -14,7 +14,7 @@ namespace StackManagementSystemUI.SearchDAL
         public DataTable SearchInfo(Search searchObj)
         {
             string connectionString =
-                @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+                @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
 
             string query = "SELECT Item,Category,Company,AvailableQuantity,ReorderLabel FROM Items WHERE Category='"+ searchObj.Category +"' AND Company='"+searchObj.Company +"'";
             SqlConnection conn=new SqlConnection(connectionString);

@@ -12,7 +12,7 @@ namespace StackManagementSystemUI.StockInDAL
     {
         public DataTable GetReorderAndAvaQuantity(string seletedItem)
         {
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT ReorderLabel,AvailableQuantity FROM Items WHERE Item='" + seletedItem + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);

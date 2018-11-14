@@ -16,7 +16,7 @@ namespace StackManagementSystemUI.StcOutDAL
 
             bool sellInfo = false;
             string connectionString =
-                @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+                @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
 
             string query = @"UPDATE Items SET AvailableQuantity=(AvailableQuantity-" + stcOutItmObj.StockOutQuantity +
                            ")WHERE Item='" + stcOutItmObj.Item + "' AND Company='" + stcOutItmObj.Company + "'";

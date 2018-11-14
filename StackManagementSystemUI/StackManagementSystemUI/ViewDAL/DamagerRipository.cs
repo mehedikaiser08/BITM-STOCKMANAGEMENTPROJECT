@@ -9,15 +9,14 @@ using StackManagementSystemUI.ViewModels;
 
 namespace StackManagementSystemUI.ViewDAL
 {
-    public class ViewRipository
+    public class DamagerRipository
     {
-
-        public DataTable ViewInfo(ViewInfo viewObj)
+        public DataTable DamageInfo(ViewInfo viewObj)
         {
             string connectionString =
-                @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+                @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
 
-            string query = "SELECT Item,Quantity FROM Stockouts WHERE Id="+1+" AND (Date BETWEEN '"+viewObj.FromDate+"' AND '"+viewObj.ToDate+"')";
+            string query = "SELECT Item,Quantity FROM Stockouts WHERE Id=" + 2 + " AND (Date BETWEEN '" + viewObj.FromDate + "' AND '" + viewObj.ToDate + "')";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);
             DataTable dt = new DataTable();

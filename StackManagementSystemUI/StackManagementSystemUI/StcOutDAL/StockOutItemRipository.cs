@@ -12,7 +12,7 @@ namespace StackManagementSystemUI.StcOutDAL
     {
         public DataTable GetItemForComboBox(string selectedCategory)
         {
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT Item FROM Items WHERE Category='" + selectedCategory + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);

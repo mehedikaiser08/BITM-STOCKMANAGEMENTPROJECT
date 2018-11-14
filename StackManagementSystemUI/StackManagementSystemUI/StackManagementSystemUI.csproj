@@ -146,8 +146,12 @@
     <Compile Include="StockOutForm.Designer.cs">
       <DependentUpon>StockOutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewBLL\ViewManager.cs" />
-    <Compile Include="ViewDAL\ViewRipository.cs" />
+    <Compile Include="ViewBLL\DamageManager.cs" />
+    <Compile Include="ViewBLL\LostManager.cs" />
+    <Compile Include="ViewBLL\ViewSellsManager.cs" />
+    <Compile Include="ViewDAL\DamagerRipository.cs" />
+    <Compile Include="ViewDAL\LostRipository.cs" />
+    <Compile Include="ViewDAL\ViewSellsRipository.cs" />
     <Compile Include="ViewSalesForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -4,17 +4,17 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StackManagementSystemUI.ViewDAL;
 using StackManagementSystemUI.ViewModels;
+using StackManagementSystemUI.ViewDAL;
 
 namespace StackManagementSystemUI.ViewBLL
 {
-    public class ViewManager
+    public class LostManager
     {
-        public DataTable ViewInfo(ViewInfo viewObj)
+        public DataTable LostInfo(ViewInfo viewObj)
         {
-            ViewRipository viewRipoObj = new ViewRipository();
-            DataTable dt= viewRipoObj.ViewInfo(viewObj);
+            LostRipository lostRipoObj=new LostRipository();
+            DataTable dt = lostRipoObj.LostInfo(viewObj);
             return dt;
         }
     }

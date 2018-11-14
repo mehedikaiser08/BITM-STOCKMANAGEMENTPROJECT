@@ -12,7 +12,7 @@ namespace StackManagementSystemUI.CompanyDAL
     {
         public bool UpdateCompanyName(UpdateComName upComObj)
         {
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT Name FROM Companies WHERE Name='" + upComObj.CompanyUpdateName + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);

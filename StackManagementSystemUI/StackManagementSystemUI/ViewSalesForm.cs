@@ -28,7 +28,7 @@ namespace StackManagementSystemUI
             try
             {
 
-                ViewManager managObj = new ViewManager();
+                ViewSellsManager managObj = new ViewSellsManager();
                 DataTable dt = new DataTable();
                 
                 dt = managObj.ViewInfo(viewObj);
@@ -46,6 +46,62 @@ namespace StackManagementSystemUI
                 MessageBox.Show(exception.Message);
             }
             
+        }
+
+        private void damageButton_Click(object sender, EventArgs e)
+        {
+            ViewInfo viewObj = new ViewInfo();
+            viewObj.FromDate = dateTimePickerStart.Value;
+            viewObj.ToDate = dateTimePickerEnd.Value;
+
+            try
+            {
+
+                DamageManager damgMangObj = new DamageManager();
+                DataTable dt = new DataTable();
+
+                dt = damgMangObj.DamageInfo(viewObj);
+
+                if (dt.Rows.Count == 0)
+                {
+                    viewSalesDataGridView.Rows.Clear();
+                    MessageBox.Show("No item sold between date " + viewObj.FromDate + " and " + viewObj.ToDate);
+                    return;
+                }
+                viewSalesDataGridView.DataSource = dt;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void lostButton_Click(object sender, EventArgs e)
+        {
+            ViewInfo viewObj = new ViewInfo();
+            viewObj.FromDate = dateTimePickerStart.Value;
+            viewObj.ToDate = dateTimePickerEnd.Value;
+
+            try
+            {
+
+                LostManager lostMangObj = new LostManager();
+                DataTable dt = new DataTable();
+
+                dt = lostMangObj.LostInfo(viewObj);
+
+                if (dt.Rows.Count == 0)
+                {
+                    viewSalesDataGridView.Rows.Clear();
+                    MessageBox.Show("No item sold between date " + viewObj.FromDate + " and " + viewObj.ToDate);
+                    return;
+                }
+                viewSalesDataGridView.DataSource = dt;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

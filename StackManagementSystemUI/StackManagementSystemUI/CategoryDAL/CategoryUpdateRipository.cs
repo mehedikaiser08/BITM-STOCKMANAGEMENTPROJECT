@@ -14,7 +14,7 @@ namespace StackManagementSystemUI.CategoryDAL
         public bool CategoryUpdateName(CategoryUpdate updateCatgObj)
         {
 
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT Name FROM Categories WHERE Name='" + updateCatgObj.CategoryUpdateName + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);

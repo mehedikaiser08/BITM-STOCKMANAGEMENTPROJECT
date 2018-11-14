@@ -14,7 +14,7 @@ namespace StackManagementSystemUI.CategoryDAL
         public bool SaveCatgoryInfo(Category categoryObj)
         {
             bool categoryInfo = false;
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT Name FROM Categories WHERE Name='" + categoryObj.CategoryName + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);
@@ -44,7 +44,7 @@ namespace StackManagementSystemUI.CategoryDAL
         public DataTable CategoryDataTable()
         {
 
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT *FROM Categories";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);

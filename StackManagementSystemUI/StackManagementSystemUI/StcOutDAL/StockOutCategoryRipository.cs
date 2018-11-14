@@ -13,7 +13,7 @@ namespace StackManagementSystemUI.StcOutDAL
     {
         public DataTable GetCategoryNames(string selectedCompany)
         {
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT DISTINCT Category FROM Items WHERE Company='" + selectedCompany + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);

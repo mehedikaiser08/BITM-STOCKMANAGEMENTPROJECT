@@ -5,15 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using StackManagementSystemUI.ViewModels;
 
-namespace StackManagementSystemUI.StockInDAL
+namespace StackManagementSystemUI.ViewDAL
 {
-    public class StockInCompanyLoadRipository
+    public class ViewSellsRipository
     {
-        public DataTable GetCompanyNames()
+
+        public DataTable ViewInfo(ViewInfo viewObj)
         {
-            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
-            string query = @"SELECT Name FROM Companies";
+            string connectionString =
+                @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+
+            string query = "SELECT Item,Quantity FROM Stockouts WHERE Id="+1+" AND (Date BETWEEN '"+viewObj.FromDate+"' AND '"+viewObj.ToDate+"')";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);
             DataTable dt = new DataTable();
@@ -21,6 +25,7 @@ namespace StackManagementSystemUI.StockInDAL
             SqlDataAdapter da = new SqlDataAdapter(comd);
             da.Fill(dt);
             conn.Close();
+
             return dt;
         }
     }

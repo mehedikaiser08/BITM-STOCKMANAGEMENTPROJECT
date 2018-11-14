@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchButton = new System.Windows.Forms.Button();
+            this.sellsInfoButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.viewSalesDataGridView = new System.Windows.Forms.DataGridView();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.damageButton = new System.Windows.Forms.Button();
+            this.lostButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewSalesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // searchButton
+            // sellsInfoButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(370, 87);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 0;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.sellsInfoButton.BackColor = System.Drawing.Color.White;
+            this.sellsInfoButton.Location = new System.Drawing.Point(55, 90);
+            this.sellsInfoButton.Name = "sellsInfoButton";
+            this.sellsInfoButton.Size = new System.Drawing.Size(75, 23);
+            this.sellsInfoButton.TabIndex = 0;
+            this.sellsInfoButton.Text = "Sells List";
+            this.sellsInfoButton.UseVisualStyleBackColor = false;
+            this.sellsInfoButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(183, 24);
+            this.label1.Location = new System.Drawing.Point(52, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 1;
@@ -59,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(183, 59);
+            this.label2.Location = new System.Drawing.Point(52, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 2;
@@ -68,16 +71,16 @@
             // viewSalesDataGridView
             // 
             this.viewSalesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewSalesDataGridView.Location = new System.Drawing.Point(22, 142);
+            this.viewSalesDataGridView.Location = new System.Drawing.Point(12, 142);
             this.viewSalesDataGridView.Name = "viewSalesDataGridView";
-            this.viewSalesDataGridView.Size = new System.Drawing.Size(567, 199);
+            this.viewSalesDataGridView.Size = new System.Drawing.Size(379, 199);
             this.viewSalesDataGridView.TabIndex = 5;
             // 
             // dateTimePickerStart
             // 
             this.dateTimePickerStart.CustomFormat = "yyyy-MM-dd";
             this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerStart.Location = new System.Drawing.Point(264, 24);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(130, 18);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerStart.TabIndex = 6;
@@ -87,22 +90,46 @@
             // 
             this.dateTimePickerEnd.CustomFormat = "yyyy-MM-dd";
             this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(264, 53);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(130, 53);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerEnd.TabIndex = 7;
+            // 
+            // damageButton
+            // 
+            this.damageButton.BackColor = System.Drawing.Color.White;
+            this.damageButton.Location = new System.Drawing.Point(155, 90);
+            this.damageButton.Name = "damageButton";
+            this.damageButton.Size = new System.Drawing.Size(75, 23);
+            this.damageButton.TabIndex = 8;
+            this.damageButton.Text = "Damage List";
+            this.damageButton.UseVisualStyleBackColor = false;
+            this.damageButton.Click += new System.EventHandler(this.damageButton_Click);
+            // 
+            // lostButton
+            // 
+            this.lostButton.BackColor = System.Drawing.Color.White;
+            this.lostButton.Location = new System.Drawing.Point(255, 90);
+            this.lostButton.Name = "lostButton";
+            this.lostButton.Size = new System.Drawing.Size(75, 23);
+            this.lostButton.TabIndex = 9;
+            this.lostButton.Text = "Lost List";
+            this.lostButton.UseVisualStyleBackColor = false;
+            this.lostButton.Click += new System.EventHandler(this.lostButton_Click);
             // 
             // ViewSalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 392);
+            this.ClientSize = new System.Drawing.Size(403, 392);
+            this.Controls.Add(this.lostButton);
+            this.Controls.Add(this.damageButton);
             this.Controls.Add(this.dateTimePickerEnd);
             this.Controls.Add(this.dateTimePickerStart);
             this.Controls.Add(this.viewSalesDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.sellsInfoButton);
             this.Name = "ViewSalesForm";
             this.Text = "View Sales Between Two Dates";
             ((System.ComponentModel.ISupportInitialize)(this.viewSalesDataGridView)).EndInit();
@@ -113,11 +140,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button sellsInfoButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView viewSalesDataGridView;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.Button damageButton;
+        private System.Windows.Forms.Button lostButton;
     }
 }

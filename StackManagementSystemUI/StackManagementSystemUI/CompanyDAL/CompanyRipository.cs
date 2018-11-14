@@ -14,7 +14,7 @@ namespace StackManagementSystemUI.CompanyDAL
         public bool SaveCompInfo(Company comObj)
         {
             bool companyInfo = false;
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT Name FROM Companies WHERE Name='" + comObj.CompanyName + "'";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);
@@ -45,7 +45,7 @@ namespace StackManagementSystemUI.CompanyDAL
         public DataTable CompanyDataTable()
         {
 
-            string connectionString = @"Server=DESKTOP-063GM06\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
+            string connectionString = @"Server=.\SQLEXPRESS;Database=STOCKMANAGEMENTSYSTEM;Integrated Security=true";
             string query = @"SELECT *FROM Companies";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comd = new SqlCommand(query, conn);
